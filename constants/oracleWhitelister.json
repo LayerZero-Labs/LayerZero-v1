@@ -1,0 +1,27 @@
+{
+  "ethereum":   "",
+  "bsc":        "",
+  "avalanche":  "",
+  "polygon":    "",
+  "arbitrum":   "",
+  "optimism":   "",
+  "fantom":     "",
+
+  "rinkeby":          "0x62c5d87D598369335333B8a4A44a43267f9521B5",
+  "bsc-testnet":      "0x9BAbd07efd28b542Cb8bd36980446483D40643aC",
+  "ropsten" :         "0x0000000000000000000000000000000000000000",
+  "fuji":             "0x0C79A9b5B3AA5074c3cA66a02a97f752C01C0159",
+  "mumbai":           "0xab3Fa1670F0e39e56225E464B155A80A7913eFC4",
+  "arbitrum-rinkeby": "0x1b14EDE8B9c6eFad4fdF559E217F352B775891EC",
+  "optimism-kovan":   "0x722328b5e3f3a72c4a11868a3c7e150666a8e867",
+  "fantom-testnet":   "0xB7F9dE944D165fd46C545380Ec3c7181CdbF82ff",
+
+  "rinkeby-sandbox":          "0x62c5d87D598369335333B8a4A44a43267f9521B5",
+  "bsc-testnet-sandbox":      "0x9BAbd07efd28b542Cb8bd36980446483D40643aC",
+  "fuji-sandbox":             "0x0C79A9b5B3AA5074c3cA66a02a97f752C01C0159",
+  "mumbai-sandbox":           "0xab3Fa1670F0e39e56225E464B155A80A7913eFC4",
+  "arbitrum-rinkeby-sandbox": "0x1b14EDE8B9c6eFad4fdF559E217F352B775891EC",
+  "optimism-kovan-sandbox":   "0x722328b5e3f3a72c4a11868a3c7e150666a8e867",
+  "fantom-testnet-sandbox":   "0xB7F9dE944D165fd46C545380Ec3c7181CdbF82ff"
+
+}

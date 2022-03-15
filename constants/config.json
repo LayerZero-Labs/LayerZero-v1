@@ -1,0 +1,63 @@
+{
+  "chainAddressSize": 20,
+  "defaultConfigForChain": {
+    "inboundBlockConfirmations": 4,
+    "outboundBlockConfirmations": 4,
+    "inboundProofLibraryType": 1,
+    "outboundProofType": 1,
+    "proofTypes" : [
+      "1"
+    ]
+  },
+  "defaultTxParams": "0x00010000000000000000000000000000000000000000000000000000000000030D40",
+  "defaultSendVersion": 1,
+  "defaultReceiveVersion": 1,
+  "layerZeroFee": 0,
+  "nativeFee": 0,
+  "relayer": {
+    "baseFee": 1,
+    "feePerByte": 1,
+    "initialGasGweiPrice": 10000000000,
+    "maxEthAidrop": "0.042",
+    "priceRatio" : {
+      "1" : "10000000000",
+      "2" : "666000000",
+      "6" : "8200000",
+      "9" : "1000000",
+      "10" : "10000000000",
+      "11" : "10000000000",
+      "12" : "1500000",
+      "13" : "11000000",
+
+      "10001" : "10000000000",
+      "10002" : "10000000000",
+      "10006" : "10000000000",
+      "10009" : "10000000000",
+      "10010" : "10000000000",
+      "10011" : "10000000000",
+      "10012" : "10000000000",
+      "10013" : "10000000000",
+
+      "20001" : "10000000000",
+      "20002" : "10000000000",
+      "20006" : "10000000000",
+      "20009" : "10000000000",
+      "20010" : "10000000000",
+      "20011" : "10000000000",
+      "20012" : "10000000000",
+      "20013" : "10000000000"
+    }
+  },
+  "sandboxAndTestnetOracles": [
+    "0xA83EcD137DFb7F793b041DEEB8FD0C6F5A23E9EB",
+    "0xdB41F7F62F771819121BdE4C98b222b5B6044f76",
+    "0xc48CaB17Fcb3eb38030bc4EA54B62353d2802Ba8",
+    "0x0e251d9095dD128292A28eB383127d05d95BBD17",
+    "0xcd78e0a6cf126449717b2e388371555fd1df9cbb",
+    "0x3812F5eF5FB6171C3C07e8E865854eaBf1a0B18B"
+  ],
+  "sandboxAndTestnetRelayers": [
+    "0xb9cb228d7498d6f02b0f88f7b16d2cf836d2aea9",
+    "0xF5E8A439C599205C1aB06b535DE46681Aed1007a"
+  ]
+}
