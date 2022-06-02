@@ -10,7 +10,7 @@ LayerZero is an Omnichain Interoperability Protocol designed for lightweight mes
 add this to your package.json
 
 `
-    "@layerzerolabs/contracts": "latest",
+    "@layerzerolabs/lz-sdk": "latest",
 `
 ### Setup
 - copy .env.example to .env and fill in variables
