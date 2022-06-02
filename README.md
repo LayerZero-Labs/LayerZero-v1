@@ -10,6 +10,10 @@ LayerZero is an Omnichain Interoperability Protocol designed for lightweight mes
 ### Interfaces
 
 [Interfaces](https://github.com/LayerZero-Labs/solidity-examples/tree/main/contracts/interfaces)
+
+`yarn add @layerzerolabs/solidity-examples` 
+
+
 ### Setup
 - copy .env.example to .env and fill in variables
 - `yarn install`
