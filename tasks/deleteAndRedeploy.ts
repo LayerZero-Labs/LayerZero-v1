@@ -1,4 +1,4 @@
-import {getNetworksForEnv} from "@layerzerolabs/core-sdk";
+import {getNetworksForEnv} from "@layerzerolabs/lz-sdk";
 const shell = require('shelljs')
 
 module.exports = async function (taskArgs) {

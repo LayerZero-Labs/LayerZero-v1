@@ -1,4 +1,4 @@
-const { getEndpointIdByName } = require("@layerzerolabs/core-sdk")
+const { getEndpointIdByName } = require("@layerzerolabs/lz-sdk")
 
 module.exports = async function (taskArgs, hre) {
     let relayer = await ethers.getContract("Relayer")

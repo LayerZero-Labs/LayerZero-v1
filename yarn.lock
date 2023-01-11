@@ -912,10 +912,10 @@
     "@ethersproject/properties" "^5.5.0"
     "@ethersproject/strings" "^5.5.0"
 
-"@layerzerolabs/core-sdk@1.0.34-beta.40":
-  version "1.0.34-beta.40"
-  resolved "https://registry.yarnpkg.com/@layerzerolabs/core-sdk/-/core-sdk-1.0.34-beta.40.tgz#19a37b7b3108699bd0e64e7b14dd0fa4f2a4b66d"
-  integrity sha512-+tlV6rNp7wf5gEX/bKWgLCrBBodQI/WZ1DtI7M8VeV2tRW9ldNN8Ge/2aOneaDLR3iDoAoEjACK+0Q8nEkxxSg==
+"@layerzerolabs/lz-sdk@0.0.10":
+  version "0.0.10"
+  resolved "https://registry.npmjs.org/@layerzerolabs/lz-sdk/-/lz-sdk-0.0.10.tgz#e55c3c2889f79446829f1232002364ad29b8b2d9"
+  integrity sha512-5me1VGRX+BV1sJkToTsKdndatUPbIl6qIsHJS39ytkRCdWHdU+8xv9fSfEdtunKDijnMWYy9OQnefQOdv6joJQ==
 
 "@layerzerolabs/prettier-plugin-solidity@^1.0.0-beta.19":
   version "1.0.0-beta.19"

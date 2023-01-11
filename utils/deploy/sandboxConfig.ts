@@ -1,5 +1,5 @@
 import * as Config from "./configTypes"
-import { ChainId } from "@layerzerolabs/core-sdk"
+import { ChainId } from "@layerzerolabs/lz-sdk"
 import * as CommonConfig from "./commonConfig"
 import * as _ from "lodash"
 import { LzConfigType } from "./configTypes"

@@ -1,4 +1,4 @@
-import { ChainId } from "@layerzerolabs/core-sdk"
+import { ChainId } from "@layerzerolabs/lz-sdk"
 import { LzConfigType } from "./configTypes"
 import { LzConfig as SandboxLzConfig } from "./sandboxConfig"
 import { LzConfig as TestnetLzConfig } from "./testnetConfig"

@@ -1,7 +1,7 @@
 const path = require("path")
 const fs = require("fs")
 const config = require("../hardhat.config")
-const { CHAIN_KEY } = require("@layerzerolabs/core-sdk")
+const { CHAIN_KEY } = require("@layerzerolabs/lz-sdk")
 
 function getDeploymentAddresses(networkName) {
     const PROJECT_ROOT = path.resolve(__dirname, "..")

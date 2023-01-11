@@ -1,4 +1,4 @@
-const { CHAIN_KEY, CHAINLINK_ORACLE_CLIENTS } = require("@layerzerolabs/core-sdk")
+const { CHAIN_KEY, CHAINLINK_ORACLE_CLIENTS } = require("@layerzerolabs/lz-sdk")
 const { getEndpointId, isTestnet, isLocalhost } = require("../utils/network")
 const LINK = require("../constants/chainlink/link.json")
 

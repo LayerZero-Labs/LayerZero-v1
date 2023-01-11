@@ -1,5 +1,5 @@
 const { getEndpointId } = require("../utils/network")
-const { getEndpointIdByName } = require("@layerzerolabs/core-sdk")
+const { getEndpointIdByName } = require("@layerzerolabs/lz-sdk")
 
 module.exports = async function (taskArgs, hre) {
     let targetEndpointId = getEndpointIdByName(taskArgs.targetNetwork)

@@ -2,7 +2,7 @@ import { LzConfigType, DstConfigDefinition, DstPriceDefinition } from "./configT
 import * as ethers from "ethers"
 import BN from "bn.js"
 import { getDeploymentAddresses, getRpc } from "../readStatic"
-import { CHAIN_ID } from "@layerzerolabs/core-sdk"
+import { CHAIN_ID } from "@layerzerolabs/lz-sdk"
 import { TransactionReceipt } from "@ethersproject/abstract-provider"
 
 export interface Transaction {
