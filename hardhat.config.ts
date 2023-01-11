@@ -12,7 +12,7 @@ import "solidity-coverage"
 import "./tasks"
 
 import {HardhatUserConfig} from "hardhat/types"
-import {ChainId, accounts, setupNetwork} from "@layerzerolabs/core-sdk";
+import { accounts} from "@layerzerolabs/lz-sdk";
 
 const config: HardhatUserConfig = {
   defaultNetwork: "hardhat",
@@ -33,106 +33,77 @@ const config: HardhatUserConfig = {
     }
   },
   networks: {
-    localhost: {
-      url: "http://127.0.0.1:8545",
+    ethereum: {
+      url: "https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161", // public infura endpoint
+      chainId: 1,
       accounts: accounts(),
     },
-    hardhat: {
-      forking: {
-        enabled: process.env.FORKING === "true",
-        url: `https://eth-mainnet.alchemyapi.io/v2/${process.env.ALCHEMY_API_KEY}`,
-      },
+    bsc: {
+      url: "https://bsc-dataseed1.binance.org",
+      chainId: 56,
+      accounts: accounts(),
+    },
+    avalanche: {
+      url: "https://api.avax.network/ext/bc/C/rpc",
+      chainId: 43114,
+      accounts: accounts(),
+    },
+    polygon: {
+      url: "https://rpc-mainnet.maticvigil.com",
+      chainId: 137,
+      accounts: accounts(),
+    },
+    arbitrum: {
+      url: `https://arb1.arbitrum.io/rpc`,
+      chainId: 42161,
+      accounts: accounts(),
+    },
+    optimism: {
+      url: `https://mainnet.optimism.io`,
+      chainId: 10,
+      accounts: accounts(),
+    },
+    fantom: {
+      url: `https://rpcapi.fantom.network`,
+      chainId: 250,
+      accounts: accounts(),
     },
 
-    //////////////////////// mainnets
-    ...setupNetwork({
-    // eth mainnet
-    eth: {
-      url: `https://eth-mainnet.alchemyapi.io/v2/${process.env.ALCHEMY_MAINNET_ETH_API_KEY}`,
-    } }, [ChainId.ETHEREUM]),
-    ...setupNetwork({
-    // bsc mainnet
-    bsc: {
-      url: `https://speedy-nodes-nyc.moralis.io/${process.env.MORALIS_MAINNET_BSC_API_KEY}`,
-    } }, [ChainId.BSC]),
-    ...setupNetwork({
-    // avax mainnet
-    avax: {
-      url: `https://speedy-nodes-nyc.moralis.io/${process.env.MORALIS_MAINNET_AVAX_API_KEY}`,
-    } }, [ChainId.AVALANCHE]),
-    ...setupNetwork({
-    // polygon mainnet
-    polygon: {
-      url: `https://polygon-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_MAINNET_POLYGON_API_KEY}`,
-    } }, [ChainId.POLYGON]),
-    ...setupNetwork({
-    // arbitrum mainnet
-    arbitrum: {
-      url: `https://arb-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_MAINNET_ARBITRUM_API_KEY}`,
-    } }, [ChainId.ARBITRUM]),
-    ...setupNetwork({
-    // optimism mainnet
-    optimism: {
-       url: `https://opt-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_MAINNET_OPTIMISM_API_KEY}`,
-    } }, [ChainId.OPTIMISM]),
-    ...setupNetwork({
-    // ftm mainnet
-    ftm: {
-      url: `https://speedy-nodes-nyc.moralis.io/${process.env.MORALIS_MAINNET_FTM_API_KEY}`,
-    } }, [ChainId.FANTOM]),
-
-
-    // // GOERLI
-    // // https://eth-goerli.alchemyapi.io/v2/
-    // ...setupNetwork({
-    //   goerli: {
-    //     url: `https://eth-goerli.alchemyapi.io/v2/${process.env.ALCHEMY_GOERLI_API_KEY}`,
-    //     gasMultiplier: 2,
-    //   }
-    // }, [ChainId.GOERLI, ChainId.GOERLI_SANDBOX]),
-
-    // RINKEBY -> will be deprecated
-    ...setupNetwork({
-      rinkeby: {
-        url: `https://eth-rinkeby.alchemyapi.io/v2/${process.env.ALCHEMY_RINKEBY_API_KEY}`,
-        gasMultiplier: 2,
-      }
-    }, [ChainId.RINKEBY, ChainId.RINKEBY_SANDBOX]),
-    ...setupNetwork({
-      "bsc-testnet": {
-        url: process.env.BSC_TESTNET_RPC // "https://data-seed-prebsc-2-s3.binance.org:8545",
-      }
-    }, [ChainId.BSC_TESTNET, ChainId.BSC_TESTNET_SANDBOX]),
-    ...setupNetwork({
-      fuji: {
-        url: process.env.FUJI_RPC, // "https://api.avax-test.network/ext/bc/C/rpc",
-        gasMultiplier: 3
-      }
-    }, [ChainId.FUJI, ChainId.FUJI_SANDBOX]),
-    ...setupNetwork({
-      mumbai: {
-        url: `https://polygon-mumbai.g.alchemy.com/v2/${process.env.ALCHEMY_MUMBAI_API_KEY}`, // "https://rpc-mumbai.maticvigil.com/",
-        gasMultiplier: 2,
-      }
-    }, [ChainId.MUMBAI, ChainId.MUMBAI_SANDBOX]),
-    ...setupNetwork({
-      arbrink: {
-        url: `https://arb-rinkeby.g.alchemy.com/v2/${process.env.ALCHEMY_ARBRINK_API_KEY}`,
-        gasMultiplier: 2,
-      }
-    }, [ChainId.ARBITRUM_RINKEBY, ChainId.ARBITRUM_RINKEBY_SANDBOX]),
-    ...setupNetwork({
-      optkov: {
-        url: `https://opt-kovan.g.alchemy.com/v2/${process.env.ALCHEMY_OPTKOV_API_KEY}`, // `https://optimism-kovan.infura.io/v3/${process.env.INFURA_API_KEY}`,
-        // url: `${process.env.INUFRA_OPTKOV_RPC}`
-      }
-    }, [ChainId.OPTIMISM_KOVAN, ChainId.OPTIMISM_KOVAN_SANDBOX]),
-    ...setupNetwork({
-      ftmtestnet: {
-        url: `${process.env.FTM_TESTNET_RPC}`,
-        gasMultiplier: 2,
-      }
-    }, [ChainId.FANTOM_TESTNET, ChainId.FANTOM_TESTNET_SANDBOX]),
+    goerli: {
+      url: "https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161", // public infura endpoint
+      chainId: 5,
+      accounts: accounts(),
+    },
+    'bsc-testnet': {
+      url: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+      chainId: 97,
+      accounts: accounts(),
+    },
+    fuji: {
+      url: `https://api.avax-test.network/ext/bc/C/rpc`,
+      chainId: 43113,
+      accounts: accounts(),
+    },
+    mumbai: {
+      url: "https://rpc-mumbai.maticvigil.com/",
+      chainId: 80001,
+      accounts: accounts(),
+    },
+    'arbitrum-goerli': {
+      url: `https://goerli-rollup.arbitrum.io/rpc/`,
+      chainId: 421613,
+      accounts: accounts(),
+    },
+    'optimism-goerli': {
+      url: `https://goerli.optimism.io/`,
+      chainId: 420,
+      accounts: accounts(),
+    },
+    'fantom-testnet': {
+      url: `https://rpc.testnet.fantom.network/`,
+      chainId: 4002,
+      accounts: accounts(),
+    }
   },
   paths: {
     artifacts: "artifacts",

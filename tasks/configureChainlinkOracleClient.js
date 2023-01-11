@@ -1,4 +1,4 @@
-const { getEndpointIdByName, CHAIN_KEY } = require("@layerzerolabs/core-sdk")
+const { getEndpointIdByName, CHAIN_KEY } = require("@layerzerolabs/lz-sdk")
 const { getDeploymentAddresses } = require("../utils/readStatic")
 const LINK = require("../constants/chainlink/link.json")
 const ORACLE_WHITELISTER_ADDRESSES = require("../constants/oracleWhitelister.json")

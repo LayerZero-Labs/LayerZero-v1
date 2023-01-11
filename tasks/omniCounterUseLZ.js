@@ -1,5 +1,5 @@
 const { getDeploymentAddresses } = require("../utils/readStatic")
-const { getEndpointIdByName } = require("@layerzerolabs/core-sdk")
+const { getEndpointIdByName } = require("@layerzerolabs/lz-sdk")
 const { getEndpointId } = require("../utils/network")
 
 // get the ChainlinkOracleClient address for this local chain

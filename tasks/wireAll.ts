@@ -1,6 +1,6 @@
 import {cli} from "cli-ux";
 
-const { CHAIN_ID } = require("@layerzerolabs/core-sdk")
+const { CHAIN_ID } = require("@layerzerolabs/lz-sdk")
 import { LZ_CONFIG } from "../utils/deploy/configs"
 import * as crossChainHelper from "../utils/deploy/crossChainHelper"
 import markdownTable from "markdown-table"

@@ -1,4 +1,4 @@
-const { CHAIN_ID, CHAIN_STAGE, ChainStage } = require("@layerzerolabs/core-sdk")
+const { CHAIN_ID, CHAIN_STAGE, ChainStage } = require("@layerzerolabs/lz-sdk")
 
 function getEndpointId() {
     if (isLocalhost()) {

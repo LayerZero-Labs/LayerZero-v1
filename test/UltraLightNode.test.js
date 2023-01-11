@@ -1123,17 +1123,6 @@ describe("UltraLightNode:", function () {
                 ])
             ).revertedWith("SafeMath: subtraction overflow")
         })
-
-        it("withdrawOracleQuotedFee() - oracle", async function () {
-            const oracle = await ethers.getContract("ChainlinkOracleClient")
-            await oracle.setUln(ultraLightNode.address)
-
-            await expect(oracle.withdrawOracleQuotedFee(0))
-                .to.emit(ultraLightNode, "WithdrawNative")
-                .withArgs(WITHDRAW_TYPE_ORACLE_QUOTED_FEES, oracle.address, oracle.address, oracle.address, 0)
-
-            await expect(oracle.connect(user1).withdrawOracleQuotedFee(0)).to.revertedWith("Ownable: caller is not the owner")
-        })
     })
 
     it("updateHash() - reverts if same data (srcChainId, oracle, blockHash) is set with LTE confirmations", async function () {

@@ -1,4 +1,4 @@
-const { CHAIN_KEY, CHAINLINK_ORACLE_CLIENTS, getEndpointIdByName } = require("@layerzerolabs/core-sdk")
+const { CHAIN_KEY, CHAINLINK_ORACLE_CLIENTS, getEndpointIdByName } = require("@layerzerolabs/lz-sdk")
 const { getEndpointId } = require("../utils/network")
 
 const TYPE_ORACLE = 6

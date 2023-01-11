@@ -1,5 +1,5 @@
 const { getDeploymentAddresses } = require("../utils/readStatic")
-const { CHAIN_KEY, CHAIN_LIST_ID, CHAIN_ID, CHAINLINK_ORACLE_CLIENTS, getEndpointIdByName } = require("@layerzerolabs/core-sdk")
+const { CHAIN_KEY, CHAIN_LIST_ID, CHAIN_ID, CHAINLINK_ORACLE_CLIENTS, getEndpointIdByName } = require("@layerzerolabs/lz-sdk")
 const { getEndpointId } = require("../utils/network")
 
 module.exports = async function (taskArgs, hre) {

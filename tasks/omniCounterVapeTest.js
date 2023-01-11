@@ -1,5 +1,5 @@
 const { getDeploymentAddresses, getRpc } = require("../utils/readStatic")
-const { CHAIN_ID } = require("@layerzerolabs/core-sdk")
+const { CHAIN_ID } = require("@layerzerolabs/lz-sdk")
 const crossChainHelper = require("../utils/deploy/crossChainHelper")
 function sleep(millis) {
     return new Promise((resolve) => setTimeout(resolve, millis))

@@ -1,4 +1,4 @@
-import { ChainId } from "@layerzerolabs/core-sdk"
+import { ChainId } from "@layerzerolabs/lz-sdk"
 import * as Config from "./configTypes"
 import * as CommonConfig from "./commonConfig"
 import { LzConfigType } from "./configTypes"

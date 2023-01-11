@@ -1,4 +1,4 @@
-const { getNetworksForEnv } = require("@layerzerolabs/core-sdk")
+const { getNetworksForEnv } = require("@layerzerolabs/lz-sdk")
 const fs = require("fs")
 
 const environmentArg = process.argv[2]
