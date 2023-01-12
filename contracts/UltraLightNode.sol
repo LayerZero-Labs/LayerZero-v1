@@ -9,8 +9,7 @@ import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/SafeERC20.sol";
 
-import "@layerzerolabs/proof-evm/contracts/ILayerZeroValidationLibrary.sol";
-
+import "./interfaces/ILayerZeroValidationLibrary.sol";
 import "./interfaces/ILayerZeroMessagingLibrary.sol";
 import "./interfaces/ILayerZeroReceiver.sol";
 import "./interfaces/ILayerZeroRelayer.sol";
