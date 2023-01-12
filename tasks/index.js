@@ -24,29 +24,6 @@ task("omniCounterSendV2", "calls OmniCounter.incrementCounter()", require("./omn
     .addParam("airdropEthQty", "the qty of ether to airdrop on destination")
     .addParam("airdropAddr", "the destination address to send ether")
 
-task("omniCounterSendConcurrent", "calls OmniCounter.incrementCounter() simultaneously at ", require("./omniCounterSendConcurrent"))
-    .addParam("targetNetwork", "the destination network name. ie: fuji-sandbox")
-    .addOptionalParam("b", "the number of request per target network that goes inside the same block", 1, types.int)
-    .addOptionalParam("n", "the number of incrementCounter() calls per target network. default: 1", 1, types.int)
-
-task("omniCounterVapeTest", "calls OmniCounter.incrementCounter() on all loopback", require("./omniCounterVapeTest"))
-    .addParam("e", "the environment ie: mainnet, testnet or sandbox")
-    .addOptionalParam("b", "the number of request per target network that goes inside the same block", 1, types.int)
-    .addOptionalParam("n", "the number of incrementCounter() calls per target network. default: 1", 1, types.int)
-    .addOptionalParam("a", "test all paths. default: false", false, types.boolean)
-    .addOptionalParam("ignore", "csv of network names to ignore when selecting the --a", "", types.string)
-    .addOptionalParam("oracle", "name of the Oracle, ie: '', chainlink, flux", "", types.string)
-    .addOptionalParam("confirmations", "the # of inbound and outbound block confirmations (symmetricly)", 0, types.int)
-    .addOptionalParam("loops", "the number of full-world loops", 1, types.int)
-    .addOptionalParam("delay", "the seconds of delay betweeen full-world loops", 0, types.int)
-
-task("wireAll", "check the config on all path", require("./wireAll")).addParam("e", "the environment ie: mainnet, testnet or sandbox")
-
-task("omniCounterSwitchProofType", "switch all OmniCounter to the given proof type", require("./omniCounterSwitchProofType"))
-    .addParam("e", "the environment ie: mainnet, testnet or sandbox")
-    .addParam("p", "outbound proof type")
-    .addParam("v", "inbound proof version")
-
 task("omniCounterSendFanout", "calls OmniCounter.incrementCounterMulti() targeting many networks", require("./omniCounterSendFanout"))
     .addParam("targetNetworks", "csv of destination network names. ie: rinkeby,fuji,mumbai")
     .addOptionalParam("n", "the number of incrementCounter() calls per target network. default: 1", 1, types.int)
@@ -78,25 +55,6 @@ task(
 
 // poll getCounter() on the OmniCounter
 task("pollOmniCounter", "poll getCounter()", require("./omniCounterPoll"))
-
-// for testing purposes, use the deployer wallet as the --lz param so we can call it manually
-task("deployChainlinkOracleClient", "deploy an instance of ChainlinkOracleClient.sol", require("./deployChainlinkOracleClient"))
-    .addParam("link", "the LINK token address for the chain were deploying to")
-    .addParam("fee", "ie: 0.001, paid in link")
-    .addParam("localChainId", "the local chainId, which it will pass to the orace for updateHash")
-    .addParam("lz", "default: 0x0 for deployer, otherwise the address that will be calling this oracle clients notifyOracleOfBlock")
-    .addParam("jobIdFile", "default: ./constants/chainlink/sandbox/oracle_job_ids.json")
-    .addParam("oracleAddressFile", "default: ./constants/chainlink/sandbox/oracles.json")
-
-// notifiy the chainlink oracle, instructing it to move the blockHash + receiptsRoot
-// for testing purposes, use the deployer wallet as the --lz param so we can call it manually
-task("chainlinkNotifyOracle", "call ChainlinkOracleClient instance notifyOracleOfBlock", require("./chainlinkNotifyOracle"))
-    .addParam("addr", "the ChainlinkOracleClient address")
-    .addParam("chain", "the layerzero destination chainId")
-    .addParam("oracle", "the chainlink oracle address, for setJob()")
-    .addParam("dstNetwork", "the destination layerzero Network instance")
-    .addParam("confirmations", "the block confirmations for the oracle to wait")
-    .addParam("link", "chainlink LINK token address for approveToken()")
 
 // call estimateNativeFees on an endpoint to check the price of a message
 task("estimateFees", "shows the native fees for the parameters specified", require("./estimateFees"))
@@ -134,12 +92,6 @@ task(
     "sets the jobids in the ChainlinkOracleClient contract based",
     require("./configureChainlinkOracleClient")
 ).addParam("env", "mainnet, testnet, or sandbox")
-
-task(
-    "testChainlinkOracle",
-    "initiate the local chainlink oracle and test it on destination with a mock",
-    require("./testChainlinkOracle")
-).addParam("targetNetwork", "each network has a mock Netowrk.sol to receive the updateHash() call")
 
 //
 task("omniCounterDeploy", "deploy a new counter to the network", require("./omniCounterDeploy"))
