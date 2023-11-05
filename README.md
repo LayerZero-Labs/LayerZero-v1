@@ -19,7 +19,7 @@ add this to your package.json
 `yarn test`
 #### Single Test File
 `yarn test test/Endpoint.test.js`
-### Gas Uasge
+### Gas Usage
 `yarn test:gas`
 ### Coverage
 `yarn test:coverage`
