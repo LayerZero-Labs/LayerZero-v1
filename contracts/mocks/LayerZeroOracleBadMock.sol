@@ -14,7 +14,7 @@ contract LayerZeroOracleBadMock is ILayerZeroOracle, Ownable, ReentrancyGuard {
     mapping(uint16 => mapping(uint16 => uint)) public chainPriceLookup;
     uint public fee;
     ILayerZeroUltraLightNodeV1 public uln; // ultraLightNode instance
-    ILayerZeroEndpoint public endpoint; // for bad oracles trying to talk to endpoint
+    ILayerZeroEndpoint public endpoint; // for bad oracles trying to talk to the endpoint
 
     event OracleNotified(uint16 dstChainId, uint16 _outboundProofType, uint blockConfirmations);
     event Withdraw(address to, uint amount);
