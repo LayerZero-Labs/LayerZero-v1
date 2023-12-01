@@ -116,5 +116,5 @@ task("filterHashReceived", "filter on recent UltraLightNode HashReceived events"
 
 task("deleteAndRedeploy", "remove contracts from folder and redeploy", require("./deleteAndRedeploy"))
     .addParam("e", "the environment ie: mainnet, testnet or sandbox")
-    .addParam("contract", "the contrac tto delete and redeploy")
+    .addParam("contract", "the contract to delete and redeploy")
     .addOptionalParam("ignore", "csv of network names to ignore", "", types.string)
