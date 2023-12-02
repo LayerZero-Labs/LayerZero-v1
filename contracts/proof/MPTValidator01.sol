@@ -85,7 +85,7 @@ contract MPTValidator01 is ILayerZeroValidationLibrary, IValidationLibraryHelper
         }
 
         // TYPE_SWAP_REMOTE == 1 && only if the payload has a payload
-        // only swapRemote inside of stargate can call sgReceive on an user supplied to address
+        // only swapRemote inside of stargate can call sgReceive on a user supplied to address
         // thus we do not care about the other type functions even if the toAddress is overly long.
         if (functionType == 1) {
             // decode the _payload with its types
