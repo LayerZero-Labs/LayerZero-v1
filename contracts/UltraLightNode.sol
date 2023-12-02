@@ -188,7 +188,7 @@ contract UltraLightNode is ILayerZeroMessagingLibrary, ILayerZeroUltraLightNodeV
 
             // (a - 3), pay the protocol
             {
-                // if no ZRO token or not specifying a payment address, pay in native token
+                // if no ZRO token or not specify a payment address, pay in native token
                 bool payInNative = _zroPaymentAddress == address(0x0) || address(layerZeroToken) == address(0x0);
                 uint protocolFee = treasuryContract.getFees(!payInNative, totalNativeFee, oracleFee); // totalNativeFee == relayerFee here
 
