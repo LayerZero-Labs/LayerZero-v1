@@ -109,7 +109,7 @@ contract MPTValidator01 is ILayerZeroValidationLibrary, IValidationLibraryHelper
                 }
 
                 if (size == 0) {
-                    // size == 0 indicates its not a contract, payload wont be delivered
+                    // size == 0 indicates its not a contract, payload won't be delivered
                     // secure the _payload to make sure funds can be delivered to the toAddress
                     bytes memory newToAddressBytes = abi.encodePacked(toAddress);
                     bytes memory securePayload = abi.encode(functionType, srcPoolId, dstPoolId, dstGasForCall, c, s, newToAddressBytes, bytes(""));

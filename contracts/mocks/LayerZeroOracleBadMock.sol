@@ -50,7 +50,7 @@ contract LayerZeroOracleBadMock is ILayerZeroOracle, Ownable, ReentrancyGuard {
         endpoint = ILayerZeroEndpoint(endpointAddress);
     }
 
-    // mock, doesnt do anything
+    // mock, doesn't do anything
     function setJob(uint16 _chain, address _oracle, bytes32 _id, uint _fee) public onlyOwner {}
 
     function setDeliveryAddress(uint16 _dstChainId, address _deliveryAddress) public onlyOwner {}

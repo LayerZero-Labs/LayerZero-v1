@@ -102,7 +102,7 @@ contract UltraLightNodeV2 is ILayerZeroMessagingLibraryV2, ILayerZeroUltraLightN
         require(_packet.dstAddress == _dstAddress, "LayerZero: invalid dstAddress");
 
         // if the dst is not a contract, then emit and return early. This will break inbound nonces, but this particular
-        // path is already broken and wont ever be able to deliver anyways
+        // path is already broken and won't ever be able to deliver anyways
         if (!_isContract(_dstAddress)) {
             emit InvalidDst(_packet.srcChainId, _packet.srcAddress, _packet.dstAddress, _packet.nonce, keccak256(_packet.payload));
             return;
