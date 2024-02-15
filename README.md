@@ -6,6 +6,12 @@ This repository contains the smart contracts for LayerZero Endpoints. For develo
 LayerZero is an Omnichain Interoperability Protocol designed for lightweight message passing across chains. LayerZero provides authentic and guaranteed message delivery with configurable trustlessness. The protocol is implemented as a set of gas-efficient, non-upgradable smart contracts.
 
 ## Development
+For streamlined development with LayerZero, integrate our smart contracts by adding `"@layerzerolabs/contracts": "latest"` to your `package.json`.  
+Begin by duplicating `.env.example` as `.env`, customizing variables before running `yarn install`.  
+Testing is straightforward: use `yarn test` for the full suite or target individual tests, e.g., `yarn test test/Endpoint.test.js`.  
+For insights into gas usage and coverage, `yarn test:gas` and `yarn test:coverage` are available.  
+Ensure code quality with `yarn lint`, noting it applies solely to `.js` and `.ts` files.  
+
 ### Interfaces
 add this to your package.json
 
