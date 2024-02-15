@@ -1,5 +1,3 @@
-// Refactored code with async/await and error handling
-
 const { getNetworksForEnv } = require("@layerzerolabs/lz-sdk");
 const fs = require("fs").promises;
 
