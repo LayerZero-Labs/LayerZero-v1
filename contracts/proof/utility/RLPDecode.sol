@@ -22,7 +22,7 @@ library RLPDecode {
     }
 
     /*
-     * @dev Returns the next element in the iteration. Reverts if it has not next element.
+     * @dev Returns the next element in the iteration. Reverts if it has no next element.
      * @param self The iterator.
      * @return The next element in the iteration.
      */
