@@ -23,11 +23,11 @@ module.exports = async function (taskArgs, hre) {
     const localAddr = (await hre.deployments.get("OmniCounter")).address
     const omniCounter = await OmniCounter.attach(localAddr)
     const dstChainId = getEndpointIdByName(taskArgs.targetNetwork)
-    console.log(`omniCounter.adderss: ${omniCounter.address}`)
+    console.log(`omniCounter.address: ${omniCounter.address}`)
 
-    //---- get the current set oracle, ie: dont overwite it if its already set ---
+    //---- get the current set oracle, ie: don't overwrite it if its already set ---
     let tx
-    //---- get the current set oracle, ie: dont overwite it if its already set ---
+    //---- get the current set oracle, ie: don't overwrite it if its already set ---
     let sendVersion = await omniCounter.getSendVersion()
     let receiveVersion = await omniCounter.getReceiveVersion()
     console.log(`sendVersion: ${sendVersion}, receiveVersion: ${receiveVersion}`)
