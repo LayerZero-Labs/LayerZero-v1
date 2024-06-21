@@ -196,7 +196,7 @@ contract Endpoint is Ownable, ILayerZeroEndpoint {
     // Migration step 2: set the receive version
     // after all messages sent from the old version are received
     // the UA can now safely switch to the new receive version
-    // it is the UA's responsibility make sure all messages from the old version are processed
+    // it is the UA's responsibility to make sure all messages from the old version are processed
     function setReceiveVersion(uint16 _newVersion) external override validVersion(_newVersion) {
         // write into config
         LibraryConfig storage uaConfig = uaConfigLookup[msg.sender];
