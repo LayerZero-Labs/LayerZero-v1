@@ -21,16 +21,24 @@ async function getAddresses(environment, contractCsv) {
 }
 
 function getAddressForNetwork(file, network) {
-    return new Promise((res) => {
+    return new Promise((resolve, reject) => {
         fs.readFile(file, (error, content) => {
-            if (content == undefined) {
-                console.log(`File: ${file} does not exsist`)
-                return
+            if (error) {
+                console.error(`Error reading file: ${file}`, error);
+                reject(`Error reading file: ${file}`);
+                return;
             }
-            res(`${network}: ${JSON.parse(content).address}`)
-        })
-    })
+            try {
+                const address = JSON.parse(content).address;
+                resolve(`${network}: ${address}`);
+            } catch (parseError) {
+                console.error(`Error parsing JSON from file: ${file}`, parseError);
+                reject(`Error parsing JSON from file: ${file}`);
+            }
+        });
+    });
 }
+
 
 // to run: node getAddresses ${ENVIRONMENT} ${CONTRACT_CSV}
 // example: node getAddresses testnet Relayer,Endpoint,UltraLightNode
