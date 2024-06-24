@@ -137,7 +137,6 @@ contract RelayerV2 is ReentrancyGuard, OwnableUpgradeable, Proxied, ILayerZeroRe
     }
 
     function getFee(uint16 _dstChainId, uint16 _outboundProofType, address _userApplication, uint _payloadSize, bytes calldata _adapterParams) external view override returns (uint) {
-        require(_payloadSize <= 10000, "Relayer: _payloadSize tooooo big");
         (uint basePrice, uint pricePerByte) = _getPrices(_dstChainId, _outboundProofType, _userApplication, _adapterParams);
         return basePrice.add(_payloadSize.mul(pricePerByte));
     }
@@ -148,7 +147,6 @@ contract RelayerV2 is ReentrancyGuard, OwnableUpgradeable, Proxied, ILayerZeroRe
 
     function assignJob(uint16 _dstChainId, uint16 _outboundProofType, address _userApplication, uint _payloadSize, bytes calldata _adapterParams) external override returns (uint) {
         require(msg.sender == address(uln), "Relayer: invalid uln");
-        require(_payloadSize <= 10000, "Relayer: _payloadSize tooooo big");
         (uint basePrice, uint pricePerByte) = _getPrices(_dstChainId, _outboundProofType, _userApplication, _adapterParams);
         uint totalFee = basePrice.add(_payloadSize.mul(pricePerByte));
         emit AssignJob(totalFee);
