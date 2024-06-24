@@ -6,12 +6,14 @@ This repository contains the smart contracts for LayerZero Endpoints. For develo
 LayerZero is an Omnichain Interoperability Protocol designed for lightweight message passing across chains. LayerZero provides authentic and guaranteed message delivery with configurable trustlessness. The protocol is implemented as a set of gas-efficient, non-upgradable smart contracts.
 
 ## Development
-### Interfaces
-add this to your package.json
 
-`
-    "@layerzerolabs/contracts": "latest",
-`
+### Interfaces
+
+[Interfaces](https://github.com/LayerZero-Labs/solidity-examples/tree/main/contracts/interfaces)
+
+`yarn add @layerzerolabs/solidity-examples` 
+
+
 ### Setup
 - copy .env.example to .env and fill in variables
 - `yarn install`
