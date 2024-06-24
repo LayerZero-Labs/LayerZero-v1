@@ -25,7 +25,7 @@ contract LayerZeroOracleMock is ILayerZeroOracle, Ownable, ReentrancyGuard {
     }
 
     function updateHash(uint16 _remoteChainId, bytes32 _blockHash, uint _confirmations, bytes32 _data) external {
-        require(approvedAddresses[msg.sender], "LayerZeroOracleMock: caller must be approved");
+        require(approvedAddresses[msg.sender], "LayerZeroOracleMock: the caller must be approved");
         uln.updateHash(_remoteChainId, _blockHash, _confirmations, _data);
     }
 

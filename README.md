@@ -71,7 +71,7 @@ ethereum: {
 }
 ```
 
-Example: More than one LayerZero Network on same chain (using expandNetwork)
+Example: More than one LayerZero Network on the same chain (using expandNetwork)
 ```
 //hardhat.config.ts
 ...expandNetwork({

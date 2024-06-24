@@ -11,7 +11,7 @@ interface ILayerZeroOracle {
     // @notice Ultra-Light Node notifies the Oracle of a new block information relaying request
     // @param _dstChainId the destination endpoint identifier
     // @param _outboundProofType the proof type identifier to specify the data to be relayed
-    // @param _outboundBlockConfirmations the number of source chain block confirmation needed
+    // @param _outboundBlockConfirmations the number of source chain block confirmations needed
     function notifyOracle(uint16 _dstChainId, uint16 _outboundProofType, uint64 _outboundBlockConfirmations) external;
 
     // @notice query if the address is an approved actor for privileges like data submission and fee withdrawal etc.

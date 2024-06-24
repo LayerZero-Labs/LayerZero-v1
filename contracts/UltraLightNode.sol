@@ -106,15 +106,15 @@ contract UltraLightNode is ILayerZeroMessagingLibrary, ILayerZeroUltraLightNodeV
     //----------------------------------------------------------------------------------
     // PROTOCOL
 
-    // This function completes delivery of a LayerZero message.
+    // This function completes the delivery of a LayerZero message.
     //
     // In order to deliver the message, this function:
     // (a) takes the _transactionProof submitted by UA's relayer, and
     // (b) retrieve UA's validation library
-    // (c) takes the _blockData submitted by the UA's oracle given the their configuration (and blockConfirmations),
+    // (c) takes the _blockData submitted by the UA's oracle given their configuration (and blockConfirmations),
     // (d) decodes using UA's validation library using (a) and (c)
-    //  then, this functions asserts that
-    // (e) the payload originated from the known Ultra Light Node from source chain, and
+    //  then, this function asserts that
+    // (e) the payload originated from the known Ultra Light Node from the source chain, and
     // (f) the _dstAddress the specified destination contract
     function validateTransactionProof(uint16 _srcChainId, address _dstAddress, uint _gasLimit, bytes32 _lookupHash, bytes calldata _transactionProof) external override {
         // retrieve UA's configuration using the _dstAddress from arguments.
