@@ -6,6 +6,7 @@ module.exports = async function (taskArgs) {
     const ignoreNetworks = taskArgs.ignore.split(',')
     if(!taskArgs.e || networks.length == 0) {
         console.log(`Invalid environment argument: ${taskArgs.e}`)
+        return
     }
 
     //delete contract and redeploy
