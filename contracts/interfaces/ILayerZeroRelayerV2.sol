@@ -6,16 +6,16 @@ interface ILayerZeroRelayerV2 {
     // @notice query price and assign jobs at the same time
     // @param _dstChainId - the destination endpoint identifier
     // @param _outboundProofType - the proof type identifier to specify proof to be relayed
-    // @param _userApplication - the source sending contract address. relayers may apply price discrimination to user apps
-    // @param _payloadSize - the length of the payload. it is an indicator of gas usage for relaying cross-chain messages
+    // @param _userApplication - the source sending contract address. Relayers may apply price discrimination to user apps
+    // @param _payloadSize - the length of the payload. It is an indicator of gas usage for relaying cross-chain messages
     // @param _adapterParams - optional parameters for extra service plugins, e.g. sending dust tokens at the destination chain
     function assignJob(uint16 _dstChainId, uint16 _outboundProofType, address _userApplication, uint _payloadSize, bytes calldata _adapterParams) external returns (uint price);
 
     // @notice query the relayer price for relaying the payload and its proof to the destination chain
     // @param _dstChainId - the destination endpoint identifier
     // @param _outboundProofType - the proof type identifier to specify proof to be relayed
-    // @param _userApplication - the source sending contract address. relayers may apply price discrimination to user apps
-    // @param _payloadSize - the length of the payload. it is an indicator of gas usage for relaying cross-chain messages
+    // @param _userApplication - the source sending contract address. Relayers may apply price discrimination to user apps
+    // @param _payloadSize - the length of the payload. It is an indicator of gas usage for relaying cross-chain messages
     // @param _adapterParams - optional parameters for extra service plugins, e.g. sending dust tokens at the destination chain
     function getFee(uint16 _dstChainId, uint16 _outboundProofType, address _userApplication, uint _payloadSize, bytes calldata _adapterParams) external view returns (uint price);
 
