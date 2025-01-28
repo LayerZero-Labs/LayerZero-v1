@@ -6,7 +6,7 @@ module.exports = async function ({ deployments, getNamedAccounts }) {
     const { deployer } = await getNamedAccounts()
 
     await deploy("Endpoint", {
-        from: deployer,
+        {from: deployer,
         args: [getEndpointId()],
         // if set it to true, will not attempt to deploy
         // even if the contract deployed under the same name is different
